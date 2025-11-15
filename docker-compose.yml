@@ -143,3 +143,15 @@ services:
     - -c
     - export DEBIAN_FRONTEND=noninteractive && ln -snf /usr/share/zoneinfo/America/Mexico_City
       /etc/localtime && echo America/Mexico_City > /etc/timezone && sleep infinity
+  AILV:
+    image: debian:latest
+    container_name: AILV
+    hostname: AILV
+    ports:
+    - 12012:80
+    restart: unless-stopped
+    command:
+    - /bin/bash
+    - -c
+    - export DEBIAN_FRONTEND=noninteractive && ln -snf /usr/share/zoneinfo/America/Mexico_City
+      /etc/localtime && echo America/Mexico_City > /etc/timezone && sleep infinity
